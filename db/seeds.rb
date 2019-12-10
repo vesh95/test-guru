@@ -20,3 +20,5 @@ UserTest.create([
   { user_id: user.id, test_id: tests[1].id },
   { user_id: user.id, test_id: tests[2].id }
 ])
+
+Test.create!( title: 'Owned test', category: categories[0], author: user)
