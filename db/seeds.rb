@@ -1,12 +1,22 @@
-category_backend = Category.create!(title: 'Backend')
-category_frontend = Category.create!(title: 'Frontend')
-ruby_test = Test.create!(title: 'Ruby', level: 1, category_id: category_backend.id)
-ruby_test_question = Question.create(body: 'Что вернёт метод select', test_id: ruby_test.id)
-Answer.create!(body: 'Вервый попавшийся элемент в массиве', question_id: ruby_test_question.id)
-Answer.create!(body: 'Подмассив, соответствующий условию выборки', question_id: ruby_test_question.id)
-express_test = Test.create!(title: 'Express', level: 2, category_id: category_backend.id)
-react_test_id = Test.create!(title: 'ReactJS', level: 2, category_id: category_frontend.id)
+categories = Category.create!([{ title: 'Backend' }, { title: 'Frontend' }])
+tests = Test.create!([
+  { title: 'Ruby', level: 1, category_id: categories[0].id },
+  { title: 'Express', level: 2, category_id: categories[0].id },
+  { title: 'ReactJS', level: 2, category_id: categories[1].id }
+])
+
+questions = Question.create([
+  { body: 'Что вернёт метод select', test_id: tests[0].id },
+])
+
+Answer.create!([
+  { body: 'Вервый попавшийся элемент в массиве', question_id: questions[0].id },
+  { body: 'Подмассив, соответствующий условию выборки', question_id: questions[0].id }
+])
+
 user = User.create(login: 'TestUser', password_digest: 'TestPassword')
-UserTest.create(user_id: user.id, test_id: ruby_test.id)
-UserTest.create(user_id: user.id, test_id: express_test.id)
-UserTest.create(user_id: user.id, test_id: react_test_id.id)
+UserTest.create([
+  { user_id: user.id, test_id: tests[0].id },
+  { user_id: user.id, test_id: tests[1].id },
+  { user_id: user.id, test_id: tests[2].id }
+])
