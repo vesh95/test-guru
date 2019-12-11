@@ -6,7 +6,6 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
 
   def self.names_by_category(name)
-    joins(:category)
-    .where(categories: { title: name }).pluck(:title)
+    joins(:category).where(categories: { title: name }).pluck(:title)
   end
 end
