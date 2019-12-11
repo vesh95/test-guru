@@ -23,3 +23,5 @@ UserTest.create([
 ])
 
 Test.create!( title: 'Owned test', category: categories[0], author: user)
+
+Test.create!(title: 'NoCategoryTest', author: User.find_by(login: 'TestOwner'))
