@@ -6,6 +6,7 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
 
   validates :title, presence: true
+  validate :level_validation
 
   scope :easy, -> { where(level: 0..1)}
   scope :middle, -> { where(level: 2..4) }
@@ -15,5 +16,11 @@ class Test < ApplicationRecord
 
   scope :names_by_category, -> (name) do
     joins(:category).where(categories: { title: name }).pluck(:title)
+  end
+
+  private
+
+  def level_validation
+    errors.add(:level) if level.negative?
   end
 end
