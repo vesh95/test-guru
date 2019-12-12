@@ -9,7 +9,9 @@ class Test < ApplicationRecord
   scope :middle, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  def self.names_by_category(name)
+  scope :level, -> (level) { where(level: level) }
+
+  scope :names_by_category, -> (name) do
     joins(:category).where(categories: { title: name }).pluck(:title)
   end
 end

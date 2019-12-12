@@ -5,6 +5,6 @@ class User < ApplicationRecord
 
   # has_secure_password
   def tests_by_level(level)
-    tests.where(level: level)
+    tests.level(level)
   end
 end
