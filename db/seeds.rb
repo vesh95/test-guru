@@ -1,4 +1,4 @@
-test_owner = User.create!(login: 'TestOwner', password_digest: 'OwnerPassword')
+test_owner = User.create!(email: 'TestOwner', password_digest: 'OwnerPassword')
 categories = Category.create!([
   { title: 'Backend' },
   { title: 'Frontend' },
@@ -35,7 +35,7 @@ Answer.create!([
   { body: 'Для управления состоянием приложения', question: questions[4], correct: true }
 ])
 
-user = User.create(login: 'TestUser', password_digest: 'TestPassword')
+user = User.create(email: 'TestUser', password_digest: 'TestPassword')
 UserTest.create([
   { user: user, test: tests[0] },
   { user: user, test: tests[1] },
@@ -44,4 +44,4 @@ UserTest.create([
 
 Test.create!( title: 'Owned test', category: categories[0], author: user)
 
-Test.create!(title: 'NoCategoryTest', author: User.find_by(login: 'TestOwner'))
+Test.create!(title: 'NoCategoryTest', author: User.find_by(email: 'TestOwner'))
