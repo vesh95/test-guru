@@ -6,6 +6,7 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
 
   validates :title, presence: true
+  validates :title, uniqueness: { scope: :level }
   validate :level_validation
 
   scope :easy, -> { where(level: 0..1)}
