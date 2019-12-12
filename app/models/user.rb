@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :tests, through: :user_tests
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id
 
+  validates :email, presence: true
+
   # has_secure_password
   def tests_by_level(level)
     tests.level(level)
