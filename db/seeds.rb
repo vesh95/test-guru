@@ -2,7 +2,8 @@ test_owner = User.create!(login: 'TestOwner', password_digest: 'OwnerPassword')
 categories = Category.create!([
   { title: 'Backend' },
   { title: 'Frontend' },
-  { title: 'Other' }
+  { title: 'Other' },
+  { title: 'AAA' }
 ])
 
 tests = Test.create!([
