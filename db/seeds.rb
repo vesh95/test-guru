@@ -1,9 +1,16 @@
 test_owner = User.create!(login: 'TestOwner', password_digest: 'OwnerPassword')
-categories = Category.create!([{ title: 'Backend' }, { title: 'Frontend' }])
+categories = Category.create!([
+  { title: 'Backend' },
+  { title: 'Frontend' },
+  { title: 'Other' }
+])
+
 tests = Test.create!([
   { title: 'Ruby', level: 1, category: categories[0], author: test_owner },
   { title: 'Express', level: 2, category: categories[0], author: test_owner },
-  { title: 'ReactJS', level: 2, category: categories[1], author: test_owner }
+  { title: 'ReactJS', level: 2, category: categories[1], author: test_owner },
+  { title: 'Hard test 1', level: 5, category: categories[2], author: test_owner },
+  { title: 'Hard test 2', level: 8, category: categories[2], author: test_owner },
 ])
 
 questions = Question.create!([
@@ -15,7 +22,7 @@ questions = Question.create!([
 ])
 
 Answer.create!([
-  { body: 'Вервый попавшийся элемент в массиве', question: questions[0], correct: true },
+  { body: 'Первый попавшийся элемент в массиве', question: questions[0], correct: true },
   { body: 'Подмассив, соответствующий условию выборки', question: questions[0] },
   { body: 'JS бекэнд фреймворк', question: questions[1], correct: true },
   { body: 'Фронтэнд фреймворк', question: questions[1] },

@@ -5,6 +5,10 @@ class Test < ApplicationRecord
   has_many :users, through: :user_tests
   has_many :questions, dependent: :destroy
 
+  scope :easy, -> { where(level: 0..1)}
+  scope :middle, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
   def self.names_by_category(name)
     joins(:category).where(categories: { title: name }).pluck(:title)
   end
