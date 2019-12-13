@@ -17,7 +17,9 @@ tests = Test.create!([
 questions = Question.create!([
   { body: 'Что вернёт метод select', test: tests[0], answers: [
     Answer.new(body: 'Первый попавшийся элемент в массиве', correct: true),
-    Answer.new(body: 'Подмассив, соответствующий условию выборки')
+    Answer.new(body: 'Подмассив, соответствующий условию выборки'),
+    Answer.new(body: 'Количество подходящих элементов'),
+    Answer.new(body: 'Случайный массив')
   ]},
   { body: 'Что такое Express?', test: tests[1], answers: [
     Answer.new(body: 'JS бекэнд фреймворк', correct: true),
@@ -36,6 +38,8 @@ questions = Question.create!([
     Answer.new(body: 'Для управления состоянием приложения', correct: true)
   ]}
 ])
+
+Answer.create!(body: 'Another answer', question: questions[0])
 
 user = User.create(email: 'TestUser', password_digest: 'TestPassword')
 UserTest.create!([
