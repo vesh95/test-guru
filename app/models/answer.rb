@@ -7,6 +7,6 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   def answers_1_4_size_validation
-    errors.add(:question) unless question.answers.size <= 4
+    errors.add(:question) unless question.answers.count <= 4
   end
 end
