@@ -39,7 +39,7 @@ questions = Question.create!([
   ]}
 ])
 
-Answer.create!(body: 'Another answer', question: questions[0])
+# Answer.create!(body: 'Another answer', question: questions[0])
 
 user = User.create(email: 'TestUser', password_digest: 'TestPassword')
 UserTest.create!([
