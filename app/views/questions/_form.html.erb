@@ -1,0 +1,10 @@
+<%= form_with model: [question.new_record? ? test : nil, question], local: true do |f| %>
+  <%= render 'shared/errors', object: @question %>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+  </div>
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+<% end %>

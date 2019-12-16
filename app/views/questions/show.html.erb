@@ -1,0 +1,11 @@
+<h1><%= question_header(@question.test) %></h1>
+<div class="links">
+  <%= link_to 'Редактировать', edit_question_path(@question) %>
+  <%= link_to 'Удалить', question_path(@question), method: :delete %>
+</div>
+<p>Вопрос: <%= @question.body %></p>
+<p>Тест: <%= link_to @question.test.title, test_path(@question.test) %></p>
+<h2>Ответы:</h2>
+<table>
+  <%= render @question.answers %>
+</table>
