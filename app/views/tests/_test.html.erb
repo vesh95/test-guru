@@ -1,0 +1,7 @@
+<tr>
+  <td><%= test.title %></td>
+  <td><%= test.level %></td>
+  <td><%= link_to '📋', test_path(test) %></td>
+  <td><%= link_to '✏️', edit_test_path(test) %></td>
+  <td><%= link_to '❌', test_path(test), method: :delete %></td>
+</tr>
