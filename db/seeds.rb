@@ -42,9 +42,9 @@ questions = Question.create!([
 # Answer.create!(body: 'Another answer', question: questions[0])
 
 user = User.create(email: 'TestUser', password_digest: 'TestPassword')
-UserTest.create!([
-  { user: user, test: tests[0] },
-  { user: user, test: tests[1] },
+TestPassage.create!([
+  # { user: user, test: tests[0] },
+  # { user: user, test: tests[1] },
   { user: user, test: tests[2] }
 ])
 
