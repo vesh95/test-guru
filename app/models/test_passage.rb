@@ -21,6 +21,10 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def success?
+    correct_percent >= 85
+  end
+
   private
 
   def before_validation_set_first_question

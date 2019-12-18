@@ -1,8 +1,10 @@
 <h1>The <%= @test_passage.test.title %> test was completed</h1>
-
+<%= link_to 'Back', tests_path %>
 <p>
   <b>Correct percent:</b>
-  <span class="correct-percent <%= @test_passage.correct_percent >= 85 ? 'success' : 'wasted' %>">
+  <span
+    class="correct-percent <%= @test_passage.success? ? 'success' : 'wasted' %>"
+  >
     <%= @test_passage.correct_percent %>%
   </span>
 </p>
