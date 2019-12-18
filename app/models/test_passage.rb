@@ -6,9 +6,12 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :set_next_question
 
-
   def completed?
     current_question.nil?
+  end
+
+  def correct_percent
+    100 / test.questions.count * correct_questions
   end
 
   def accept!(answer_ids)
@@ -38,6 +41,7 @@ class TestPassage < ApplicationRecord
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
+
   def set_next_question
     self.current_question = next_question
   end
