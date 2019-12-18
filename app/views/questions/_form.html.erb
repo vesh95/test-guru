@@ -1,4 +1,4 @@
-<h1><%= question_header(@question.test) %></h1>
+<h1><%= question_header(question.test) %></h1>
 <%= form_with model: [question.new_record? ? test : nil, question], local: true do |f| %>
   <%= render 'shared/errors', object: @question %>
   <div class="form-group">
