@@ -6,6 +6,7 @@
 <p>Вопрос: <%= @question.body %></p>
 <p>Тест: <%= link_to @question.test.title, test_path(@question.test) %></p>
 <h2>Ответы:</h2>
-<table>
+<%= link_to 'Добавить', new_question_answer_path(@question) %>
+<ol>
   <%= render @question.answers %>
-</table>
+</ol>
