@@ -6,6 +6,13 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :set_next_question
 
+  def accept!(answer_ids)
+    if correct_answer?(answer_ids)
+      self. correct_questions += 1
+    end
+    save!
+  end
+
   def completed?
     current_question.nil?
   end
@@ -14,11 +21,8 @@ class TestPassage < ApplicationRecord
     100 / test.questions.count * correct_questions
   end
 
-  def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self. correct_questions += 1
-    end
-    save!
+  def current_question_number
+    test.questions.find_index(current_question)+1
   end
 
   def success?
