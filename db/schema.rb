@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_045340) do
     t.integer "user_id", null: false
     t.integer "test_id", null: false
     t.integer "current_question_id"
-    t.integer "correct_question", default: 0
+    t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
