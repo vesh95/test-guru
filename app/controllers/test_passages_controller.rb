@@ -2,11 +2,9 @@ class TestPassagesController < ApplicationController
 
   before_action :set_test_passage, only: %i[show update result]
 
-  def show
-  end
+  def show; end
 
-  def result
-  end
+  def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
