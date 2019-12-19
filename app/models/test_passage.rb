@@ -37,7 +37,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    self.current_question = if self.new_record?
+    self.current_question = if new_record?
       test.questions.order(:id).first if test.present?
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
