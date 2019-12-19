@@ -19,7 +19,7 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    test.questions.find_index(current_question)+1
+    test.questions.where('id <= ?', current_question.id).count
   end
 
   def success?
