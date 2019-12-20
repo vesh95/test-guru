@@ -6,7 +6,12 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      if cookies[:redirect_url].nil?
+        redirect_to root_path
+      else
+        redirect_to cookies[:redirect_url]
+        cookies.delete :redirect_url
+      end
     else
       flash.now[:alert] = 'Verify login and password please'
       render :new
@@ -17,8 +22,9 @@ class SessionsController < ApplicationController
     user = User.find_by(id: session[:user_id])
 
     if user
-      session[:user_id] = nil
-      redirect_to tests_path
+      session.delete :user_id
+      cookies.delete :redirect_url
+      redirect_to login_path
     end
   end
 end
