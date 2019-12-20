@@ -11,7 +11,10 @@
 
   <body>
     <% if logged_in? %>
-      <div class='nav user'>Welcome, <b><%= current_user.email %></b>, Guru</div>
+      <div class='nav user'>
+        Welcome, <b><%= current_user.email %></b>, Guru
+        <%= link_to 'Logout', logout_path, method: :delete %>
+      </div>
     <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>

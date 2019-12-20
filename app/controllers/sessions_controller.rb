@@ -12,4 +12,13 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    user = User.find_by(id: session[:user_id])
+
+    if user
+      session[:user_id] = nil
+      redirect_to tests_path
+    end
+  end
 end
