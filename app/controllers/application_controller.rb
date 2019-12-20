@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
     unless current_user
       redirect_to(login_path, alert: 'Verify login and password please')
     end
+
+    cookies[:email] = current_user&.email
   end
 
   def current_user
