@@ -1,11 +1,13 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_user
+  helper_method :current_user, :logged_in?
 
   private
 
   def authenticate_user!
-    redirect_to login_path unless current_user
+    unless current_user
+      redirect_to(login_path, alert: 'Verify login and password please')
+    end
   end
 
   def current_user
