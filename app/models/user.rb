@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id
 
+  validates :email, format: { with: /\w+@\w+[[.]\w+]*/i}
+
   has_secure_password
 
   def test_passage(test)
