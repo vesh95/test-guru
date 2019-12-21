@@ -13,9 +13,6 @@ class User < ApplicationRecord
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :email, presence: true
-  validates :password, presence: true, if: Proc.new { |u| u.password_digest.blank? }
-  validates :password, confirmation: true
-  validates :email, format: { with: /\w+@\w+[[.]\w+]*/i }
   validates :email, uniqueness: true
 
   def test_passage(test)

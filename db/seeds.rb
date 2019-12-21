@@ -1,4 +1,4 @@
-test_owner = User.create!(email: 'TestOwner', password_digest: 'OwnerPassword')
+test_owner = User.create!(email: 'TestOwner@to', password: 'OwnerPassword')
 categories = Category.create!([
   { title: 'Backend' },
   { title: 'Frontend' },
@@ -41,7 +41,7 @@ questions = Question.create!([
 
 # Answer.create!(body: 'Another answer', question: questions[0])
 
-user = User.create(email: 'TestUser', password_digest: 'TestPassword')
+user = User.create(email: 'TestUser@tu', password: 'TestPassword')
 TestPassage.create!([
   # { user: user, test: tests[0] },
   # { user: user, test: tests[1] },
@@ -50,4 +50,4 @@ TestPassage.create!([
 
 Test.create!( title: 'Owned test', category: categories[0], author: user)
 
-Test.create!(title: 'NoCategoryTest', author: User.find_by(email: 'TestOwner'))
+Test.create!(title: 'NoCategoryTest', author: test_owner)
