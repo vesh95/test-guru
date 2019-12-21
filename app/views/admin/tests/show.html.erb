@@ -1,8 +1,8 @@
 <h1>Тест: <%= @test.title %></h1>
 <div class="links">
-  <%= link_to 'Назад', tests_path %>
-  <%= link_to 'Редактировать', edit_test_path(@test) %>
-  <%= link_to 'Удалить', test_path(@test), method: :delete %>
+  <%= link_to 'Назад',admin_tests_path %>
+  <%= link_to 'Редактировать', edit_admin_test_path(@test) %>
+  <%= link_to 'Удалить', admin_test_path(@test), method: :delete %>
 </div>
 <p>Категория: <%= @test.category.title %></p>
 <p>Уровень: <%= @test.level %></p>
@@ -14,6 +14,6 @@
     <th colspan="3">Действия</th>
   </thead>
   <tbody>
-      <%= render @test.questions %>
+      <%= render partial: 'questions/question', collection: @test.questions %>
   </tbody>
 </table>
