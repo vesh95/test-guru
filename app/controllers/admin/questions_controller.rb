@@ -1,5 +1,4 @@
-class QuestionsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::QuestionsController < Admin::BaseController
   before_action :set_question, only: %i[edit show update destroy]
   before_action :set_test, only: %i[new create]
 
@@ -22,14 +21,14 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to admin_question_path(@question)
     else
       render :edit
     end
   end
 
   def destroy
-    redirect_to @question.test if @question.destroy
+    redirect_to admin_test_path(@question.test) if @question.destroy
   end
 
   private

@@ -7,13 +7,13 @@
 <p>Категория: <%= @test.category.title %></p>
 <p>Уровень: <%= @test.level %></p>
 <h2>Вопросы к тесту</h2>
-<%= link_to 'Добавть', new_test_question_path(@test) %>
+<%= link_to 'Добавть', new_admin_test_question_path(@test) %>
 <table>
   <thead>
     <th>Текст вопроса</th>
     <th colspan="3">Действия</th>
   </thead>
   <tbody>
-      <%= render partial: 'questions/question', collection: @test.questions %>
+      <%= render @test.questions %>
   </tbody>
 </table>

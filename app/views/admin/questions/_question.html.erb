@@ -1,0 +1,6 @@
+<tr>
+  <td><%= question.body %></td>
+  <td><%= link_to '📋',admin_question_path(question)%></td>
+  <td><%= link_to '✏️', edit_admin_question_path(question) %></td>
+  <td><%= link_to '❌',admin_question_path(question), method: :delete %></td>
+</tr>
