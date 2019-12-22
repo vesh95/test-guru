@@ -12,14 +12,14 @@
     <%= f.label :category %>
     <%= f.collection_select :category_id, Category.all, :id, :title %>
   </div>
-  <% if test.new_record? %>
-    <%= f.hidden_field :author_id %>
-  <% else %>
+
+  <% unless test.new_record? %>
     <div class="form-group">
       <%= f.label :author %>
       <%= f.collection_select :author_id, User.all, :id, :email %>
     </div>
   <% end %>
+
   <div class="form-group">
     <%= f.submit %>
   </div>
