@@ -1,5 +1,6 @@
 ru:
   hello: 'Пример мир'
+
   helpers:
     submit:
       test:
@@ -11,12 +12,23 @@ ru:
         level: 'Уровень'
         category: 'Категория'
         author: 'Автор'
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        orther: "Обнаружено %{count} ошибки"
+
   tests:
     index:
       header: 'Все тесты'
+
   test_passages:
     result:
       header: "Тест %{title} успешно завершён!"
+
   admin:
     tests:
       index:

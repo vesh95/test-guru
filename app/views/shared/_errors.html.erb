@@ -1,5 +1,7 @@
 <% if object.errors.any? %>
-  <p><%= pluralize(object.errors.count, 'error') %></p>
+  <h3>
+    <%= t('.header', count: object.errors.count) %>:
+  </h3>
   <ul>
     <% object.errors.full_messages.each do |message| %>
     <li><%= message %></li>

@@ -1,16 +1,35 @@
-en:
-  hello: "Hello world"
+ru:
+  hello: 'Hello world'
   helpers:
     submit:
       test:
         create: 'Create test'
         update: 'Update test'
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category: 'Category'
+        author: 'Author'
+
+  shared:
+    errors:
+      header:
+        one: "%{count} errors detected"
+        other: "%{count} errors detected"
+
+
   tests:
     index:
       header: 'All tests'
+
+  test_passages:
+    result:
+      header: "Test %{title} success completed!"
+
   admin:
     tests:
       index:
         header: 'All tests'
       create:
-        success: 'Test was seccesful created'
+        success: 'Tests created successful'
