@@ -14,6 +14,9 @@ ru:
   tests:
     index:
       header: 'Все тесты'
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершён!"
   admin:
     tests:
       index:
