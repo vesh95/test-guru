@@ -1,5 +1,11 @@
 ru:
   hello: 'Пример мир'
+  links:
+    show: 'Показать'
+    edit: 'Редактировать'
+    delete: 'Удалить'
+    back: 'Назад'
+    add: 'Добавть'
 
   helpers:
     submit:
@@ -28,13 +34,6 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершён!"
-
-  admin:
-    tests:
-      index:
-        header: 'Все тесты'
-      create:
-        success: 'Тест успешно создан'
 
   tests_mailer:
     completed_test:

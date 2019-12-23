@@ -1,0 +1,54 @@
+ru:
+  resource_table: &table
+    actions: 'Действия'
+  admin:
+    answers: &answers
+      header: 'Ответы к вопросу %{body}'
+      true: 'Верно'
+      body: 'Вопрос: %{body}'
+      show:
+        body: 'Вопрос: %{body}'
+        answer: 'Ответ: %{body}'
+        correct: 'Верно: '
+        true: Да
+        false: Нет
+      new:
+        header: 'Новый отвек к вопросу'
+      edit:
+        header: 'Редактирование ответа'
+    questions: &questions
+      header: 'Вопросы к тесту %{title}'
+      new:
+        header: 'Добавить вопрос для теста %{title}'
+      show:
+        <<: *answers
+        header: Ответы
+        answers:
+          <<: *answers
+      edit:
+        header: 'Редактировать вопрос к тесту %{title}'
+
+    tests:
+      index:
+        header: 'Все тесты'
+        create: 'Создать тест'
+        table:
+          name: 'Название'
+          level: 'Уровень'
+          questions: 'Вопросы'
+          actions: 'Действия'
+      edit:
+        header: "Редактирование теста %{title}"
+      create:
+        success: 'Тест успешно создан'
+      show:
+        level: 'Уровень %{level}'
+        header: 'Обзор теста %{title}'
+        category: 'Категория: %{title}'
+        questions:
+          <<: *questions
+        table:
+          body: 'Вопросы'
+          actions: 'Действия'
+      new:
+        header: 'Создание теста'

@@ -1,12 +1,12 @@
-<h1><%= question_header(@question.test) %></h1>
+<h1><%= t('.answers.header', body: @question.test.title) %></h1>
 <div class="links">
-  <%= link_to 'Редактировать', edit_admin_question_path(@question) %>
-  <%= link_to 'Удалить', admin_question_path(@question), method: :delete %>
+  <%= link_to t('links.edit'), edit_admin_question_path(@question) %>
+  <%= link_to t('links.delete'), admin_question_path(@question), method: :delete %>
 </div>
-<p>Вопрос: <%= @question.body %></p>
-<p>Тест: <%= link_to @question.test.title, admin_test_path(@question.test) %></p>
-<h2>Ответы:</h2>
-<%= link_to 'Добавить', new_admin_question_answer_path(@question) %>
+<p><%= t('.body', body: @question.body) %></p>
+<p><%= t('.test'); link_to @question.test.title, admin_test_path(@question.test) %></p>
+<h2><%= t('.header') %></h2>
+<%= link_to t('links.add'), new_admin_question_answer_path(@question) %>
 <ol>
   <%= render @question.answers %>
 </ol>

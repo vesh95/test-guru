@@ -2,10 +2,23 @@ ru:
   activerecord:
     models:
       test: 'Тест'
+      answer: 'Ответ'
+      question: 'Вопрос'
+      user: 'Пользователь'
     attributes:
       test:
         title: 'Название'
         author: 'Автор'
+      question:
+        body: 'Текст вопроса'
+      answer:
+        body: 'Текст ответа'
+        correct: 'Верно?'
+      user:
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
     errors:
       messages:
         blank: 'не может быть пустым'

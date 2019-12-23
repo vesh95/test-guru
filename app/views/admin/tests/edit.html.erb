@@ -1,3 +1,2 @@
-<h1>Редактирование теста <%= @test.title %></h1>
-<%= link_to 'Назад', admin_test_path(@test) %>
+<h1><%= t('.header', title: @test.title) %></h1>
 <%= render 'form', test: @test %>

@@ -1,4 +1,4 @@
-<h1><%= question_header(question.test) %></h1>
+<%= link_to t('links.back'), admin_test_path(question.test) %>
 <%= form_with model: [:admin, @test, question], local: true do |f| %>
   <%= render 'shared/errors', object: @question %>
   <div class="form-group">

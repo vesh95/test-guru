@@ -1,3 +1,4 @@
+<%= link_to t('links.back'),admin_tests_path %>
 <%= form_with model: [:admin, test], local: true do |f| %>
   <%= render 'shared/errors', object: test %>
   <div class="form-group">
