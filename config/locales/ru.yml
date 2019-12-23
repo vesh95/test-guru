@@ -35,3 +35,7 @@ ru:
         header: 'Все тесты'
       create:
         success: 'Тест успешно создан'
+
+  tests_mailer:
+    completed_test:
+      subject: 'Вы успешно завершили тест!'

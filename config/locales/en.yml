@@ -33,3 +33,7 @@ ru:
         header: 'All tests'
       create:
         success: 'Tests created successful'
+
+  tests_mailer:
+    completed_test:
+      subject: 'You completed the TestGuru test!'
