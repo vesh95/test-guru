@@ -1,0 +1,5 @@
+ru:
+  hello: 'Пример мир'
+  tests:
+    index:
+      header: 'Все тесты'
