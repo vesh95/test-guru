@@ -1,5 +1,22 @@
 ru:
   hello: 'Пример мир'
+  helpers:
+    submit:
+      test:
+        create: 'Создать тест'
+        update: 'Обновить тест'
+    label:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category: 'Категория'
+        author: 'Автор'
   tests:
     index:
       header: 'Все тесты'
+  admin:
+    tests:
+      index:
+        header: 'Все тесты'
+      create:
+        success: 'Тест успешно создан'

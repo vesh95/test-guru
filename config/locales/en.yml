@@ -1,6 +1,16 @@
 en:
   hello: "Hello world"
-
+  helpers:
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Update test'
   tests:
     index:
       header: 'All tests'
+  admin:
+    tests:
+      index:
+        header: 'All tests'
+      create:
+        success: 'Test was seccesful created'
