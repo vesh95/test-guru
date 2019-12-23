@@ -1,12 +1,11 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_sign_in_path_for(resource)
-    flash[:notice] = "Привет, #{current_user.first_name || 'Аноним'}!"
-    if current_user.admin?
+  def after_sign_in_path_for(user)
+    if user.admin?
       admin_tests_path
     else
-      root_path
+      super
     end
   end
 
