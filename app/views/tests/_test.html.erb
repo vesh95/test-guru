@@ -4,14 +4,14 @@
   </div>
   <div class="card-body">
     <p>
-      <b>Level:</b> <%= test.level %>
+      <%= t('.level', level: test.level) %>
     </p>
     <p>
-      <b>Cuestions:</b> <%= test.questions.count %>
+      <%= t('.questions', count: test.questions.count) %>
     </p>
   </div>
   <div class="card-footer actions">
-    <%= button_to 'Start', start_test_path(test) %>
+    <%= button_to t('links.start'), start_test_path(test) %>
   </div>
 </div>
 <hr>

@@ -6,6 +6,7 @@ ru:
     delete: 'Удалить'
     back: 'Назад'
     add: 'Добавть'
+    start: 'Начать'
 
   helpers:
     submit:
@@ -30,6 +31,9 @@ ru:
   tests:
     index:
       header: 'Все тесты'
+    test:
+      level: 'Уровень %{level}'
+      questions: 'Вопросы %{count}'
 
   test_passages:
     result:
