@@ -1,4 +1,4 @@
-<h2>Become a Guru</h2>
+<h2><%= t('.header') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -21,7 +21,7 @@
   <div class="field form-group">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> <%= t('min_characters') %>)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -32,7 +32,7 @@
   </div>
 
   <div class="actions form-group">
-    <%= f.submit "Sign up" %>
+    <%= f.submit t('links.signup') %>
   </div>
 <% end %>
 

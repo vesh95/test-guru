@@ -19,6 +19,7 @@ ru:
         last_name: 'Фамилия'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+        remember_me: 'Запомнить'
     errors:
       messages:
         blank: 'не может быть пустым'

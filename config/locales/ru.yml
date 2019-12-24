@@ -1,5 +1,8 @@
 ru:
+  min_characters: 'символов минимум'
   hello: 'Пример мир'
+  alerts:
+    are_you_sure: 'Вы уверены?'
   links:
     show: 'Показать'
     edit: 'Редактировать'
@@ -7,6 +10,12 @@ ru:
     back: 'Назад'
     add: 'Добавть'
     start: 'Начать'
+    login: 'Вход'
+    logout: 'Выход'
+    signup: 'Регистрация'
+    forgot_password: 'Забыли пароль?'
+    unlock_instructions: 'Аккаунт заблокирован?'
+    confirmation_instructions: 'Не получили подтверждение?'
 
   helpers:
     select:
