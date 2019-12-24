@@ -9,6 +9,8 @@ ru:
     start: 'Начать'
 
   helpers:
+    select:
+      prompt: Выберите категорию
     submit:
       test:
         create: 'Создать тест'
