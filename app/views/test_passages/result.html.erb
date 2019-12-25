@@ -1,15 +1,19 @@
-<h1><%= t('.header', title:@test_passage.test.title) %></h1>
-<%= link_to 'Back', tests_path %>
-<p>
-  <b>Correct percent:</b>
-  <span
-    class="correct-percent <%= @test_passage.success? ? 'success' : 'wasted' %>"
-  >
-    <%= @test_passage.correct_percent %>%
-    <% if @test_passage.success? %>
-      Test passed successfully
-    <% else %>
-      Test failed
-    <% end %>
-  </span>
-</p>
+<div class="row justify-content-center">
+  <div class="col col-sm-12 col-md-8 card">
+    <div class="card-body">
+      <h1><%= t('.header', title:@test_passage.test.title) %></h1>
+      <p class="text-<%= @test_passage.success? ? 'success' : 'danger' %>">
+        <b><%= t('.correct_percent') %>:</b>
+        <span class="correct-percent">
+          <%= @test_passage.correct_percent %>%
+          <% if @test_passage.success? %>
+            <%= t('.success') %>
+          <% else %>
+            <%= t('.fail') %>
+          <% end %>
+        </span>
+      </p>
+      <%= link_to 'Back', tests_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>

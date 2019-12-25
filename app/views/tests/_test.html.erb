@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 mb-5">  
+<div class="col col-sm-12 col-lg-3 col-md-4 mb-3">
   <div class="test-card card">
     <div class="card-header">
       <h3><%= test.title %></h3>
@@ -12,7 +12,7 @@
       </p>
     </div>
     <div class="card-footer actions">
-      <%= button_to t('links.start'), start_test_path(test) %>
+      <%= button_to t('links.start'), start_test_path(test), class: 'btn btn-primary' %>
     </div>
 </div>
 </div>

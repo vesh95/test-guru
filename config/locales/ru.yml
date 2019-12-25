@@ -4,6 +4,7 @@ ru:
   alerts:
     are_you_sure: 'Вы уверены?'
   links:
+    next: 'Далее'
     show: 'Показать'
     edit: 'Редактировать'
     delete: 'Удалить'
@@ -47,8 +48,13 @@ ru:
       questions: 'Вопросы %{count}'
 
   test_passages:
+    show:
+      pass_test: 'Прохождение теста %{title}'
     result:
-      header: "Тест %{title} успешно завершён!"
+      header: "Тест %{title} завершён"
+      correct_percent: 'Правильно отвечено'
+      success: 'Тест пройден'
+      fail: 'Тест не пройнед'
 
   tests_mailer:
     completed_test:

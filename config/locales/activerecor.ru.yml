@@ -6,6 +6,8 @@ ru:
       question: 'Вопрос'
       user: 'Пользователь'
     attributes:
+      test_passage:
+        correct_percent: Правильных ответов
       test:
         title: 'Название'
         author: 'Автор'
