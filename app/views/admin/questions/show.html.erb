@@ -1,12 +1,18 @@
-<h1><%= t('.answers.header', body: @question.test.title) %></h1>
-<div class="links">
-  <%= link_to t('links.edit'), edit_admin_question_path(@question) %>
-  <%= link_to t('links.delete'), admin_question_path(@question), method: :delete %>
+<div class="col col-12 col-md-8">
+  <div class="card card-body">
+    <h1><%= t('.answers.header', body: @question.test.title) %></h1>
+    <div class="links btn-group-vertical btn-group-sm pb-3">
+      <%= link_to t('links.back'), admin_test_path(@question.test), class: 'btn btn-secondary'%>  
+      <%= link_to t('links.edit'), edit_admin_question_path(@question), class: 'btn btn-primary' %>
+      <%= link_to t('links.delete'), admin_question_path(@question), method: :delete, class: 'btn btn-danger' %>
+    </div>
+    <p><%= t('.body', body: @question.body) %></p>
+    <h2><%= t('.header') %></h2>
+    <ol>
+      <%= render @question.answers %>
+    </ol>
+    <div class="btn-group-vertical btn-group-sm">
+      <%= link_to t('links.add'), new_admin_question_answer_path(@question), class: 'btn btn-primary' %>
+    </div>
+  </div>
 </div>
-<p><%= t('.body', body: @question.body) %></p>
-<p><%= t('.test'); link_to @question.test.title, admin_test_path(@question.test) %></p>
-<h2><%= t('.header') %></h2>
-<%= link_to t('links.add'), new_admin_question_answer_path(@question) %>
-<ol>
-  <%= render @question.answers %>
-</ol>

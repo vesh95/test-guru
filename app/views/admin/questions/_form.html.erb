@@ -1,11 +1,11 @@
-<%= link_to t('links.back'), admin_test_path(question.test) %>
 <%= form_with model: [:admin, @test, question], local: true do |f| %>
   <%= render 'shared/errors', object: @question %>
   <div class="form-group">
     <%= f.label :body %>
-    <%= f.text_field :body %>
+    <%= f.text_field :body, class: 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.submit %>
+  <div class="btn-group">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to t('links.back'), admin_test_path(question.test), class: 'btn btn-secondary' %>
   </div>
 <% end %>
