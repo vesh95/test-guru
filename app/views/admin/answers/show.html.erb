@@ -1,8 +1,0 @@
-<p id="notice"><%= notice %></p>
-
-<p><%= t('.body', body: @answer.question.body) %></p>
-<p><%= t('.answer', body: @answer.body) %></p>
-<p><%= t('.correct') %><%= t(".#{@answer.correct}") %></p>
-
-<%= link_to t('links.edit'), edit_admin_answer_path(@answer) %> |
-<%= link_to t('links.back'), admin_question_path(@answer.question) %>
