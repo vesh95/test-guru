@@ -1,19 +1,23 @@
-<h1><%= t('.header', title: @test.title) %></h1>
-<div class="links">
-  <%= link_to t('links.back'),admin_tests_path %>
-  <%= link_to t('links.edit'), edit_admin_test_path(@test) %>
-  <%= link_to t('links.delete'), admin_test_path(@test), method: :delete %>
+<div class="col col-12 col-md-8">
+  <div class="card card-body m-5">
+    <h1><%= t('.header', title: @test.title) %></h1>
+    <div class="links btn-group-vertical btn-group-sm mb-3">
+      <%= link_to t('links.back'),admin_tests_path, class: 'btn btn-secondary' %>
+      <%= link_to t('links.edit'), edit_admin_test_path(@test), class: 'btn btn-primary'%>
+      <%= link_to t('links.delete'), admin_test_path(@test), method: :delete, class: 'btn btn-danger' %>
+    </div>
+    <p><%= t('.category', title: @test.category.title) %></p>
+    <p><%= t('.level', level: @test.level) %></p>
+    <h2><%= t('.questions.header', title: nil) %></h2>
+    <table class='table table-hover table-responsive-sm'>
+      <thead>
+        <th><%= t('.table.body', body: nil) %></th>
+        <th colspan="3" class='text-center'><%= t('.table.actions') %></th>
+      </thead>
+      <tbody>
+        <%= render @test.questions %>
+      </tbody>
+    </table>
+    <%= link_to t('links.add'), new_admin_test_question_path(@test), class: 'btn btn-primary' %>
+  </div>
 </div>
-<p><%= t('.category', title: @test.category.title) %></p>
-<p><%= t('.level', level: @test.level) %></p>
-<h2><%= t('.questions.header', title: nil) %></h2>
-<%= link_to t('links.add'), new_admin_test_question_path(@test) %>
-<table>
-  <thead>
-    <th><%= t('.table.body', body: nil) %></th>
-    <th colspan="3"><%= t('.table.actions') %></th>
-  </thead>
-  <tbody>
-      <%= render @test.questions %>
-  </tbody>
-</table>

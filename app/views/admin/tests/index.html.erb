@@ -1,11 +1,11 @@
 <h1><%= t('.header') %></h1>
-<%= link_to t('.create'), new_admin_test_path %>
-<table>
+<%= link_to t('.create'), new_admin_test_path, class: "btn btn-primary m-2" %>
+<table class="table table-hover">
   <thead>
     <th><%= t('.table.name') %></th>
-    <th><%= t('.table.level') %></th>
-    <th><%= t('.table.questions') %></th>
-    <th colspan="3"><%= t('.table.actions') %></th>
+    <th class="text-center"><%= t('.table.level') %></th>
+    <th class="text-center"><%= t('.table.questions') %></th>
+    <th class="text-center" colspan="3"><%= t('.table.actions') %></th>
   </thead>
   <tbody>
     <%= render @tests %>

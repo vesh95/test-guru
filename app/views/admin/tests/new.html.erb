@@ -1,2 +1,6 @@
-<h1><%= t('.header', title: @test.title) %></h1>
-<%= render 'form', test: @test %>
+<div class="col col-12 col-md-8">
+  <h1 class="text-center">
+    <%= t('.header', title: @test.title) %>
+  </h1>
+  <%= render 'form', test: @test %>
+</div>

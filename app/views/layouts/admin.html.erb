@@ -12,7 +12,11 @@
   <body>
     <%= render 'shared/admin_nav' %>
     <%= render 'shared/flash' %>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+          <%= yield %>
+        </div>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
