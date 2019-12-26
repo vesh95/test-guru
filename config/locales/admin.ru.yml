@@ -3,6 +3,9 @@ ru:
     actions: 'Действия'
   admin:
     answers: &answers
+      answer:
+        true: 'Верно'
+        false: 'Не верно'
       header: 'Ответы к вопросу %{body}'
       true: 'Верно'
       body: 'Вопрос: %{body}'
@@ -13,7 +16,7 @@ ru:
         true: Да
         false: Нет
       new:
-        header: 'Новый отвек к вопросу'
+        header: 'Новый ответ к вопросу'
       edit:
         header: 'Редактирование ответа'
     questions: &questions
