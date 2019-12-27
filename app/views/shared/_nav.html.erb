@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-between px-5">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
   <div class="navbar-nav">
-    <%= link_to t('navbar.admin-panel'), admin_tests_path, class: "nav-link" %>
+    <% if current_user.try(:admin?) %>
+      <%= link_to t('navbar.admin-panel'), admin_tests_path, class: "nav-link" %>
+    <% end %>
   </div>
   <% if user_signed_in? %>
   <div class='nav-item btn-group'>
