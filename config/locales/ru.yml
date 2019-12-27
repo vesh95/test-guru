@@ -1,6 +1,12 @@
 ru:
-  min_characters: 'символов минимум'
   hello: 'Пример мир'
+  navbar:
+    logout: 'Выход'
+    admin-panel: 'управление'
+    welcome:
+      html: '<b>%{email}</b>'
+
+  min_characters: 'символов минимум'
   alerts:
     are_you_sure: 'Вы уверены?'
   links:
