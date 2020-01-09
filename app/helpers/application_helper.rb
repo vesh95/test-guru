@@ -1,4 +1,6 @@
 module ApplicationHelper
+  AVAILABLE_FLASH = { notice: 'success', alert: 'danger' }
+
   def current_year
     DateTime.current.strftime('%Y')
   end
