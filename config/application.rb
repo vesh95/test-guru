@@ -9,5 +9,7 @@ module TestGuru
     config.load_defaults 6.0
     config.time_zone = 'Ekaterinburg'
     config.i18n.default_locale = :ru
+
+    config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end
