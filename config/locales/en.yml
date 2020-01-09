@@ -26,6 +26,9 @@ ru:
   test_passages:
     result:
       header: "Test %{title} success completed!"
+    gist:
+      success_html: "Gist was successful saved to <a href='%{gist_url}' class='btn btn-link' target='_blank'>link</a>"
+      falure: 'An error occured while saving gist'
 
   admin:
     tests:

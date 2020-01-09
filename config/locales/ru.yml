@@ -61,6 +61,9 @@ ru:
       correct_percent: 'Правильно отвечено'
       success: 'Тест пройден'
       fail: 'Тест не пройнед'
+    gist:
+      success_html: "Gist успешно сохранен по <a href='%{gist_url}' class='btn btn-link' target='_blank'>ссылке</a>"
+      falure: 'Во время сохранения gist произошла ошибка'
 
   tests_mailer:
     completed_test:
