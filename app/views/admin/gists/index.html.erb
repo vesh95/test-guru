@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <th><%= t('.link') %></th>
+    <th><%= t('.hash') %></th>
+    <th><%= t('.user') %></th>
+  </thead>
+  <tbody>
+    <% @gists.each do |gist| %>
+      <tr>
+        <td><%= link_to(truncate(gist.question.body, length: 25, omission: '...'), admin_question_path(gist.question)) %></td>
+        <td><%= link_to(hash(gist), gist.link_to, target:'_blank') %></td>
+        <td><%= gist.user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

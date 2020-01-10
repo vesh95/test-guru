@@ -2,6 +2,11 @@ ru:
   resource_table: &table
     actions: 'Действия'
   admin:
+    gists:
+      index:
+        hash: Gist URL
+        link: Вопрос
+        user: Пользователь
     answers: &answers
       answer:
         true: 'Верно'
