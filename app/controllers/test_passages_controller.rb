@@ -17,7 +17,7 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    octokit = Octokit::Client.new(access_token: GitHubClient::ACCESS_TOKEN)
+    octokit = Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
     result = GistQuestionService.new(
                @test_passage.current_question,
                current_user,

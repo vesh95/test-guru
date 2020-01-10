@@ -60,3 +60,5 @@ gem 'rails-i18n', '~> 6.0.0'
 gem "faraday", "~> 1.0"
 
 gem "octokit", "~> 4.15"
+
+gem 'dotenv-rails'
