@@ -17,20 +17,22 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    octokit = Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
     result = GistQuestionService.new(
                @test_passage.current_question,
                current_user,
-               client: octokit
              ).call
 
-    flash_options = if result[:html_url]
-      { notice: t('.success_html', gist_url: result[:html_url]).html_safe }
+    result.success?
+      Gist.create(
+        question: @question, link_to: result[:html_url],
+        user: @user
+      )
+      flash[:notice] = t('.success_html', gist_url: result[:html_url]) }
     else
-      { alert: t('.falure')}
+      flash[:alert] = t('.falure')}
     end
 
-    redirect_to @test_passage, flash_options
+    redirect_to @test_passage
   end
 
   private
