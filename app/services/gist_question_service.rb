@@ -1,18 +1,27 @@
 class GistQuestionService
 
-  def initialize(question, user, client: default_client)
+  class Result
+    def initialize(result)
+      @result = result
+    end
+
+    def [](key)
+      @result[key]
+    end
+
+    def success?
+      !@result[:html_url].nil?
+    end
+  end
+
+  def initialize(question, client: default_client)
     @question = question
-    @user = user
     @test = @question.test
     @client = client
   end
 
   def call
-    @result = @client.create_gist(gist_params)
-  end
-
-  def success?
-    !@result[:html_url].nil?
+    GistQuestionService::Result.new(@client.create_gist(gist_params))
   end
 
   private
