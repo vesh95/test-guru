@@ -1,23 +1,18 @@
 class GistQuestionService
 
-  def initialize(question, user, client: nil)
+  def initialize(question, user, client: default_client)
     @question = question
     @user = user
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client
   end
 
   def call
-    result = @client.create_gist(gist_params)
-    if result
-      Gist.create(
-        question: @question, link_to: result[:html_url],
-        user: @user
-      )
-    else
-      return
-    end
-    result
+    @result = @client.create_gist(gist_params)
+  end
+
+  def success?
+    !@result[:html_url].nil?
   end
 
   private
@@ -38,5 +33,9 @@ class GistQuestionService
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
+  end
+
+  def default_client
+    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 end
