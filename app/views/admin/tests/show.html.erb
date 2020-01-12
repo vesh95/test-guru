@@ -6,7 +6,7 @@
       <%= link_to t('links.edit'), edit_admin_test_path(@test), class: 'btn btn-primary'%>
       <%= link_to t('links.delete'), admin_test_path(@test), method: :delete, class: 'btn btn-danger' %>
     </div>
-    <p><%= t('.category', title: @test.category.title) %></p>
+    <p><%= !@test.category.nil? ? t('.category', title: @test.category.title) : nil %></p>
     <p><%= t('.level', level: @test.level) %></p>
     <h2><%= t('.questions.header', title: nil) %></h2>
     <table class='table table-hover table-responsive-sm'>
