@@ -2,7 +2,11 @@
 <%= link_to t('.create'), new_admin_test_path, class: "btn btn-primary m-2" %>
 <table class="table table-hover">
   <thead>
-    <th><%= t('.table.name') %></th>
+    <th class="sort-by-title pointer">
+      <%= t('.table.name') %>
+      <%= octicon 'arrow-up', class: "text-success hide" %>
+      <%= octicon 'arrow-down', class: "text-success hide" %>
+    </th>
     <th class="text-center"><%= t('.table.level') %></th>
     <th class="text-center"><%= t('.table.questions') %></th>
     <th class="text-center" colspan="3"><%= t('.table.actions') %></th>

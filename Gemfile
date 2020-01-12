@@ -62,3 +62,5 @@ gem "faraday", "~> 1.0"
 gem "octokit", "~> 4.15"
 
 gem 'dotenv-rails'
+
+gem "octicons_helper", "~> 9.3"

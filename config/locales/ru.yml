@@ -49,6 +49,7 @@ ru:
   tests:
     index:
       header: 'Все тесты'
+      sort_by_name: Сортировать по имени
     test:
       level: 'Уровень %{level}'
       questions: 'Вопросы %{count}'

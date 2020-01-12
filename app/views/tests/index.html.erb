@@ -1,4 +1,11 @@
 <h1><%= t('.header') %></h1>
-<div class="tests-list row">
+<div class="sort-params row m-1">
+  <div class="btn btn-light sort-by-header">
+    <%= t('.sort_by_name') %>
+    <%= octicon 'arrow-up', class: 'text-success hide' %>
+    <%= octicon 'arrow-down', class: 'text-success hide' %>
+  </div>
+</div>
+<div class="test-cards row col">
   <%= render @tests %>
 </div>
