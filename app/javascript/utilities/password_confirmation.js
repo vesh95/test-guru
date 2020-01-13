@@ -2,10 +2,10 @@ $(document).on('turbolinks:load', function () {
   var passwordField = $('#user_password')
   var confirmationField = $('#user_password_confirmation')
 
-  // Not bind keyups if confirmation field not exist 
+  // Not bind keyups if confirmation field not exist
   if (confirmationField.length) {
     confirmationField.keyup(confirmationAlerts)
-    passwordField.keyup(confirmationAlerts)
+    passwordField.input(confirmationAlerts)
   }
 
   function confirmationAlerts() {
