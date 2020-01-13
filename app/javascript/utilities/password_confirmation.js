@@ -4,12 +4,12 @@ $(document).on('turbolinks:load', function () {
 
   // Not bind keyups if confirmation field not exist
   if (confirmationField.length) {
-    confirmationField.keyup(confirmationAlerts)
-    passwordField.input(confirmationAlerts)
+    confirmationField.on('input', confirmationAlerts)
+    passwordField.on('input', confirmationAlerts)
   }
 
   function confirmationAlerts() {
-    if (passwordField.val() === '' && confirmationField.val() === '') {
+    if (confirmationField.val() === '') {
       reset()
     } else if (passwordField.val() === confirmationField.val()) {
       passed()
