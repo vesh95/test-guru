@@ -28,6 +28,15 @@
         </div>
       </div>
     <% end %>
+    <%= content_tag :div, class: 'progress test-passage-progress',
+      data:{ percent: @test_passage.passage_percent } do %>
+      <div
+        class="progress-bar progress-bar-animated"
+        role="progressbar"
+      >
+        <%= @test_passage.passage_percent %>
+      </div>
+    <% end %>
   </div>
   </div>
 </div>
