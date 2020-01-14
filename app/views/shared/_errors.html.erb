@@ -1,4 +1,6 @@
-<% if object.errors.any? %>
+<% if object.present? && object.errors.any? %>
+<%= content_tag :div, class: 'alert alert-warning m-2 resource-errors',
+  data: {object_id: object.id } do %>
   <h3>
     <%= t('.header', count: object.errors.count) %>:
   </h3>
@@ -7,4 +9,5 @@
     <li><%= message %></li>
     <% end %>
   </ul>
+<% end %>
 <% end %>

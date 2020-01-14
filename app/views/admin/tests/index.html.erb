@@ -1,5 +1,8 @@
 <h1><%= t('.header') %></h1>
 <%= link_to t('.create'), new_admin_test_path, class: "btn btn-primary m-2" %>
+
+<%= render 'shared/errors', object: @test %>
+
 <table class="table table-hover">
   <thead>
     <th class="sort-by-title pointer">
