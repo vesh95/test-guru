@@ -11,6 +11,7 @@ ru:
       test:
         title: 'Название'
         author: 'Автор'
+        level: Уровень
       question:
         body: 'Текст вопроса'
       answer:
