@@ -2,9 +2,20 @@ ru:
   hello: 'Пример мир'
   navbar:
     logout: 'Выход'
-    admin-panel: 'управление'
+    admin-panel: 'Управление'
     welcome:
       html: '<b>%{email}</b>'
+
+  feedback:
+    link: Оставить отзыв
+    header: Оставить отзыв
+    author: Ваш адрес электронной почты
+    send: Отправить
+    success: Отзыв успешно отправлен
+  feedbacks:
+    create:
+      success: Отзыв успешно отправлен
+
 
   min_characters: 'символов минимум'
   alerts:

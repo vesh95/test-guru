@@ -4,6 +4,7 @@
     <% if current_user.try(:admin?) %>
       <%= link_to t('navbar.admin-panel'), admin_tests_path, class: "nav-link" %>
       <%= link_to t('navbar.gists'), admin_gists_path, class: "nav-link" %>
+      <%= link_to t('feedback.link'), feedback_path, class: "nav-link" %>
     <% end %>
   </div>
   <% if user_signed_in? %>
