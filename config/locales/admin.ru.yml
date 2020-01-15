@@ -38,7 +38,7 @@ ru:
 
     tests:
       index:
-        header: 'Все тесты'
+        head: 'Все тесты'
         create: 'Создать тест'
         table:
           name: 'Название'
