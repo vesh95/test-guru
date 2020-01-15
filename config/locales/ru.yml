@@ -58,6 +58,7 @@ ru:
         orther: "Обнаружено %{count} ошибки"
 
   tests:
+    link: Тесты
     index:
       header: 'Все тесты'
       sort_by_name: Сортировать по имени
