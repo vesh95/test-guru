@@ -6,6 +6,10 @@ ru:
     welcome:
       html: '<b>%{email}</b>'
 
+  feedback_mailer:
+    feedback:
+      subject: Новый отзыв
+
   feedback:
     link: Оставить отзыв
     header: Оставить отзыв
