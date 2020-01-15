@@ -1,11 +1,13 @@
-<h1><%= t('.header') %></h1>
-<div class="sort-params row m-1">
-  <div class="btn btn-light sort-by-header">
-    <%= t('.sort_by_name') %>
-    <%= octicon 'arrow-up', class: 'text-success hide' %>
-    <%= octicon 'arrow-down', class: 'text-success hide' %>
+<div class="col-12">
+  <h1><%= t('.header') %></h1>
+  <div class="sort-params row m-1">
+    <div class="btn btn-outline-warning sort-by-header">
+      <%= t('.sort_by_name') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </div>
   </div>
-</div>
-<div class="test-cards row col">
-  <%= render @tests %>
+  <div class="test-cards row col">
+    <%= render @tests %>
+  </div>
 </div>

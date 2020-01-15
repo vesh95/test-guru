@@ -1,42 +1,44 @@
-<h2><%= t('.header') %></h2>
+<div class="col-12 col-sm-7 col-md-5 border rounded p-3 border-info">
+  <h2><%= t('.header') %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field form-group">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
 
-  <div class="field form-group">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
 
-  <div class="field form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="field form-group" id="password">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> <%= t('min_characters') %>)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field form-group" id="password">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> <%= t('min_characters') %>)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-  <div class="field form-group" id="password-confirmation">
-    <%= f.label :password_confirmation %>
-    <br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    <%= octicon 'issue-opened', height: 20, class: 'text-danger hide passed' %>
-    <%= octicon 'issue-closed', height: 20, class: 'text-success hide passend' %>
-  </div>
+    <div class="field form-group" id="password-confirmation">
+      <%= f.label :password_confirmation %>
+      <br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= octicon 'issue-opened', height: 20, class: 'text-danger hide passed' %>
+      <%= octicon 'issue-closed', height: 20, class: 'text-success hide passend' %>
+    </div>
 
-  <div class="actions form-group">
-    <%= f.submit t('links.signup') %>
-  </div>
-<% end %>
+    <div class="actions form-group">
+      <%= f.submit t('links.signup') %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
