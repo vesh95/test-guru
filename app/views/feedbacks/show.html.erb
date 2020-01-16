@@ -1,4 +1,5 @@
 <div class="col-12 col-sm-5 border rounded p-3 border-info">
+  <%= render 'shared/errors', object: @feedback %>
   <%= form_with url: feedback_path, local: true, method: :post do |f| %>
     <div class="form-group">
       <%= f.label :author, t('feedback.author') %>

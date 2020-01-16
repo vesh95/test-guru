@@ -1,7 +1,10 @@
 class FeedbackMailer < ApplicationMailer
-  def feedback(feedback_params)
-    @text = feedback_params[:text]
-    @author = feedback_params[:author]
-    mail to: Admin.first.email, subject: t('.subject')
+  default to: -> { Admin.pluck(:email) },
+          subject: -> { t('.subject') }
+
+  def feedback(feedback)
+    @text = feedback.text
+    @author = feedback.author
+    mail
   end
 end

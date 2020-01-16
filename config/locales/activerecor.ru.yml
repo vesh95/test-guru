@@ -27,3 +27,8 @@ ru:
       messages:
         blank: 'не может быть пустым'
         required: 'дожно быть заполнено'
+  activemodel:
+    attributes:
+      feedback:
+        text: Сообщение
+        author: Адрес эл. почты
