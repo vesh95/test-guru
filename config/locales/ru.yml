@@ -19,6 +19,7 @@ ru:
   feedbacks:
     create:
       success: Отзыв успешно отправлен
+      errors: Заполнены не все поля или введен некорректный email
 
 
   min_characters: 'символов минимум'
