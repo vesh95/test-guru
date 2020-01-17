@@ -1,0 +1,14 @@
+  <div class="card card-badge w-25">
+    <div class="card-header">
+      <%= image_tag("badges/#{@badge.img_name}", class: 'img-top image') %>
+    </div>
+    <div class="card-body">
+      <h1 class="card-title"><%= @badge.name %></h1>
+      <p><%= @badge.description %></p>
+    </div>
+    <div class="card-footer btn-group-vertical btn-group-sm">
+      <%= link_to t('links.edit'), edit_admin_badge_path(@badge), class: "btn btn-primary" %>
+      <%= link_to t('links.delete'), admin_badge_path(@badge), method: :delete, class: "btn btn-danger" %>
+      <%= link_to t('links.back'), admin_badges_path, class: "btn btn-secondary" %>
+    </div>
+  </div>

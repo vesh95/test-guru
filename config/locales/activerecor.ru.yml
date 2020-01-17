@@ -5,7 +5,12 @@ ru:
       answer: 'Ответ'
       question: 'Вопрос'
       user: 'Пользователь'
+      badge: Бейдж
     attributes:
+      badge:
+        name: Название
+        img_name: Название рисунка
+        description: Описание
       test_passage:
         correct_percent: Правильных ответов
       test:

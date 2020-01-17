@@ -2,6 +2,19 @@ ru:
   resource_table: &table
     actions: 'Действия'
   admin:
+    badges:
+      index:
+        header: Все бейджи
+      new:
+        header: Новый бейдж
+      edit:
+        header: '%{name}'
+      create:
+        succes: Бейдж успешно создан
+      update:
+        success: Бейдж успешно сохранен
+      destroy:
+        succes: Бейдж успешно удален
     gists:
       index:
         hash: Gist URL
