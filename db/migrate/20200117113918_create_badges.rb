@@ -4,8 +4,9 @@ class CreateBadges < ActiveRecord::Migration[6.0]
       t.string :name, null: false
       t.string :img_name, null: false, default: 'star.svg'
       t.text :description
-
-      t.timestamps
+      t.string :rule, null: false
     end
+    add_index :badges, :name, unique: true
+
   end
 end

@@ -51,3 +51,5 @@ TestPassage.create!([
 Test.create!( title: 'Owned test', category: categories[0], author: user)
 
 Test.create!(title: 'NoCategoryTest', author: test_owner)
+
+Admin.create!(email: 'ed@ed', first_name: 'Eduard', last_name: 'Larionov', password: '123123123')

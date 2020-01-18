@@ -11,6 +11,7 @@ ru:
         name: Название
         img_name: Название рисунка
         description: Описание
+        rule: Правило
       test_passage:
         correct_percent: Правильных ответов
       test:

@@ -7,6 +7,11 @@
       <p>
         <%= t('.level', level: test.level) %>
       </p>
+      <% unless test.category.nil? %>
+        <p>
+          <%= t('.category', title: test.category.title) %>
+        </p>
+      <% end %>
       <p>
         <%= t('.questions', count: test.questions.count) %>
       </p>
