@@ -1,0 +1,20 @@
+<div class="col justify-content-center">
+  <div class="row justify-content-center">
+    <h1 class=""><%= t('.header', email: @user.email) %></h1>
+  </div>
+  <div class="row">
+    <div class="card col-12 col-md-4">
+      <div class="card-body">
+        <p><%= t('.first_name_html', name: @user.first_name) %></p>
+        <p><%= t('.last_name_html', name: @user.last_name) %></p>
+        <p><%= t('.email_html', name: @user.email) %></p>
+      </div>
+    </div>
+  </div>
+  <h2><%= t('.achievements') %></h2>
+  <div class="row">
+    <% @user.badges.each do |badge| %>
+    <%= render partial: 'admin/badges/badge', locals: { badge: badge } %>
+    <% end %>
+  </div>
+</div>

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'tests#index'
 
+  get :profile, to: 'users#index'
+
   resource :feedback, only: %i[show create]
 
   devise_for :users, path: :gurus,

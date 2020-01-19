@@ -14,7 +14,7 @@
   </div>
   <% if user_signed_in? %>
       <div class='nav-item btn-group'>
-        <b class="btn btn-outline-secondary"><%= current_user.email %></b>
+        <%= link_to current_user.email, profile_path, class:"btn btn-outline-secondary" %>
         <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-outline-danger nav-link' %>
       </div>
   <% end %>

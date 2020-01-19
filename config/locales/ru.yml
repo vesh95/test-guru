@@ -89,3 +89,11 @@ ru:
       subject: 'Вы успешно завершили тест!'
     recieved_badge:
       subject: Новое достижение
+
+  users:
+    index:
+      header: 'Профиль пользователя %{email}'
+      first_name_html: '<b>Имя:</b> %{name}'
+      last_name_html: '<b>Фамилия:</b> %{name}'
+      email_html: '<b>email:</b> <a href="mailto:%{name}">%{name}</a>'
+      achievements: Награды
