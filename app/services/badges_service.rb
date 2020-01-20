@@ -20,9 +20,7 @@ class BadgesService
   private
 
   def first_try?
-    true if @user.tests
-                 .where(id: @test_passage.test.id)
-                 .count == 1 && @test_passage.success?
+    @user.tests.where(id: @test_passage.test.id).count == 1 && @test_passage.success?
   end
 
   def passed?(rule_value)
