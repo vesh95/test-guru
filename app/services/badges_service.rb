@@ -1,10 +1,10 @@
 class BadgesService
 
-  ALL_BADGES_RULES = {
-    first_try?: I18n.t('.rules.first_try'),
-    all_level_of?: I18n.t('.rules.all_level_of'),
-    passed?: I18n.t('.rules.passed')
-  }
+  ALL_BADGES_RULES = [
+  :first_try?
+  :all_level_of?
+  :passed?
+]
 
   def initialize(test_passage, user)
     @test_passage = test_passage
