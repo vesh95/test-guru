@@ -13,11 +13,11 @@ class BadgesService
   end
 
   def call
+    added_badges = []
     Badge.all.each do |badge|
-      @added_badges << badge if send("#{badge.rule}".to_sym, badge.rule_value)
+      added_badges << badge if send("#{badge.rule}".to_sym, badge.rule_value)
     end
-    @user.badges << @added_badges
-    @added_badges
+    added_badges
   end
 
   private
