@@ -1,8 +1,8 @@
 class BadgesService
 
   ALL_BADGES_RULES = [
-  :first_try?
-  :all_level_of?
+  :first_try?,
+  :all_level_of?,
   :all_for_category
 ]
 
