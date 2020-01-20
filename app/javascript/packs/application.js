@@ -1,3 +1,4 @@
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -9,3 +10,4 @@ require("../utilities/sorting.js")
 require("../utilities/password_confirmation.js")
 require("../utilities/form_inline.js")
 require("../utilities/passage_progress.js")
+require("../utilities/test_timer.js")

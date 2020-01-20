@@ -37,6 +37,11 @@
         <%= @test_passage.passage_percent %>
       </div>
     <% end %>
+    <% if @test_passage.passage_time? %>
+      <%= content_tag :div, class:"time-left", data: { left_time: @test_passage.secounds_left } do %>
+        <%= Time.at(@test_passage.left_at - Time.current, in: '+00:00').strftime("%H:%M:%S") %>
+      <% end %>
+    <% end %>
   </div>
   </div>
 </div>

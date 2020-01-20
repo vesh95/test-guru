@@ -7,11 +7,17 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self. correct_questions += 1 if correct_answer?(answer_ids)
-    save!
+    self.save!
+    self.pass! if check_time
   end
 
   def completed?
     current_question.nil?
+  end
+
+  def pass!
+    self.current_question = nil
+    # self.success = self.success? ? true : false
   end
 
   def correct_percent
@@ -30,7 +36,29 @@ class TestPassage < ApplicationRecord
     correct_percent >= 85
   end
 
+
+  def left_at
+    self.created_at + self.test.passage_time.minutes
+  end
+
+  def passage_time?
+    true unless self.test.passage_time.zero?
+  end
+
+  def secounds_left
+    Time.at(left_at - Time.current).strftime("%s")
+  end
+
   private
+
+  def check_time
+    self.pass! if time_over? && passage_time?
+  end
+
+  def time_over?
+    true if Time.current >= self.left_at
+  end
+
 
   def correct_answer?(answer_ids)
     return if answer_ids.nil?
