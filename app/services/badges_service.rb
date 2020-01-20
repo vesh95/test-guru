@@ -20,7 +20,7 @@ class BadgesService
   private
 
   def first_try?
-    @user.tests.where(id: @test_passage.test.id).count == 1 && @test_passage.success?
+    @test_passage.success? && @user.tests.where(id: @test_passage.test.id).count == 1
   end
 
   def all_for_category(rule_value)
@@ -29,8 +29,8 @@ class BadgesService
   end
 
   def all_level_of?(rule_value)
-    @user.tests.level(rule_value).where(test_passages: { success: true })
+    @test_passage.test.level == 1 && @user.tests.level(rule_value).where(test_passages: { success: true })
          .pluck(:id).sort == Test.level(rule_value).pluck(:id)
-         .sort && @test_passage.test.level == 1
+         .sort
   end
 end
