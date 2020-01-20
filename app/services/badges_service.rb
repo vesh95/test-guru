@@ -6,10 +6,9 @@ class BadgesService
   :passed?
 ]
 
-  def initialize(test_passage, user)
+  def initialize(test_passage)
     @test_passage = test_passage
-    @user = user
-    @added_badges = []
+    @user = @test_passage.user
   end
 
   def call
