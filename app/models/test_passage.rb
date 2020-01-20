@@ -15,7 +15,7 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def pass!
+  def complete_test
     self.current_question = nil
     # self.success = self.success? ? true : false
   end
@@ -51,12 +51,8 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def check_time
-    self.pass! if time_over? && passage_time?
-  end
-
-  def time_over?
-    true if Time.current >= self.left_at
+  def time_is_over?
+    true if Time.current >= self.left_at && self.passage_time?
   end
 
 
