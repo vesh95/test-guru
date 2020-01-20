@@ -24,11 +24,8 @@ class BadgesService
   end
 
   def all_for_category(rule_value)
-    true if @user.tests.where(test_passages: { success: true }).by_category(rule_value)
-                 .pluck(:id).uniq
-                 .sort == Test.by_category(rule_value)
-                 .pluck(:id).uniq
-                 .sort
+    @user.tests.where(test_passages: { success: true }).by_category(rule_value)
+         .pluck(:id).sort == Test.by_category(rule_value).pluck(:id)
   end
 
   def all_level_of?(rule_value)
