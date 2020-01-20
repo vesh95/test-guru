@@ -3,7 +3,7 @@ class BadgesService
   ALL_BADGES_RULES = [
   :first_try?,
   :all_level_of?,
-  :all_for_category
+  :all_for_category?
 ]
 
   def initialize(test_passage)
