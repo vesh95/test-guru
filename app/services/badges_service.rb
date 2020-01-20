@@ -2,9 +2,8 @@ class BadgesService
 
   ALL_BADGES_RULES = {
     first_try?: I18n.t('.rules.first_try'),
-    backend_passed?: I18n.t('.rules.backend_passed'),
-    all_level_one?: I18n.t('.rules.all_level_one'),
-    frontend_passed?: I18n.t('.rules.frontend_passed')
+    all_level_of?: I18n.t('.rules.all_level_of'),
+    passed?: I18n.t('.rules.passed')
   }
 
   def initialize(test_passage, user)
@@ -15,7 +14,7 @@ class BadgesService
 
   def call
     Badge.all.each do |badge|
-      @added_badges << badge if send("#{badge.rule}".to_sym)
+      @added_badges << badge if send("#{badge.rule}".to_sym, badge.rule_value)
     end
     @user.badges << @added_badges
     @added_badges
@@ -29,23 +28,15 @@ class BadgesService
                  .count == 1 && @test_passage.success?
   end
 
-  def backend_passed?
-    true if @user.tests.where(test_passages: { success: true }).by_category('Backend')
+  def passed?(rule_value)
+    true if @user.tests.where(test_passages: { success: true }).by_category(rule_value)
                  .pluck(:id).uniq
-                 .sort == Test.by_category('Backend')
-                 .pluck(:id).uniq
-                 .sort
-  end
-
-  def frontend_passed?
-    true if @user.tests.where(test_passages: { success: true }).by_category('Frontend')
-                 .pluck(:id).uniq
-                 .sort == Test.by_category('Frontend')
+                 .sort == Test.by_category(rule_value)
                  .pluck(:id).uniq
                  .sort
   end
 
-  def all_level_one?
+  def all_level_of?(rule_value)
     true if @user.tests.level(1)
                  .where(test_passages: { success: true })
                  .pluck(:id).sort == Test.level(1).pluck(:id)

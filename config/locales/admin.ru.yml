@@ -8,7 +8,7 @@ ru:
       new:
         header: Новый бейдж
       show:
-        rule_html: '<b>Правило:</b> %{rule}'
+        rule_html: '<b>Правило:</b> %{rule} %{value}'
       edit:
         header: '%{name}'
       create:

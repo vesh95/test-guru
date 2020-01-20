@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_061707) do
+ActiveRecord::Schema.define(version: 2020_01_20_071350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_061707) do
     t.string "img_name", default: "star.svg", null: false
     t.text "description"
     t.string "rule", null: false
+    t.string "rule_value"
     t.index ["name"], name: "index_badges_on_name", unique: true
   end
 

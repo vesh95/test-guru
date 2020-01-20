@@ -1,6 +1,5 @@
 ru:
   rules:
     first_try: 'С первой попытки'
-    backend_passed: 'Все тесты из категории Backend'
-    all_level_one: 'Все тесты уровня 1'
-    frontend_passed: 'Все тесты из категории Frontend'
+    passed: 'Все тесты из категории'
+    all_level_of: 'Все тесты уровня'

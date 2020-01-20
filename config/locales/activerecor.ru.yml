@@ -12,6 +12,7 @@ ru:
         img_name: Название рисунка
         description: Описание
         rule: Правило
+        rule_value: Значение для правила
       test_passage:
         correct_percent: Правильных ответов
       test:
