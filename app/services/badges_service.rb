@@ -23,7 +23,7 @@ class BadgesService
     @test_passage.success? && @user.tests.where(id: @test_passage.test.id).count == 1
   end
 
-  def all_for_category(rule_value)
+  def all_for_category?(rule_value)
     @user.tests.where(test_passages: { success: true }).by_category(rule_value)
          .pluck(:id).sort == Test.by_category(rule_value).pluck(:id)
   end
