@@ -5,7 +5,7 @@
     <div class="card-body">
       <h1 class="card-title"><%= @badge.name %></h1>
       <p><%= @badge.description %></p>
-      <p><%= t('.rule_html', rule: Admin::BadgesHelper::ALL_BADGES_RULES[@badge.rule.to_sym]) %></p>
+      <p><%= t('.rule_html', rule: BadgesService::ALL_BADGES_RULES[@badge.rule.to_sym]) %></p>
     </div>
     <div class="card-footer btn-group-vertical btn-group-sm">
       <%= link_to t('links.edit'), edit_admin_badge_path(@badge), class: "btn btn-primary" %>

@@ -15,7 +15,7 @@
   <div class="form-group">
     <%= f.label :rule %>
     <%= f.select :rule,
-      Admin::BadgesHelper::ALL_BADGES_RULES.map { |k,v| [v,k]}, selected: @badge.rule%>
+      BadgesService::ALL_BADGES_RULES.map { |k,v| [v,k]}, selected: @badge.rule%>
   </div>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
