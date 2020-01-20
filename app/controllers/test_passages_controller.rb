@@ -11,11 +11,10 @@ class TestPassagesController < ApplicationController
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
 
-      added_badges = []
-      added_badges << BadgesService.new(@test_passage).call
+      added_badges = BadgesService.new(@test_passage).call
       current_user.badges << added_badges
 
-      BadgesNotifyService.new(added_badges).call
+      BadgesNotifyService.new(added_badges, current_user).call
 
       redirect_to result_test_passage_path(@test_passage)
     else
