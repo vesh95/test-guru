@@ -3,7 +3,7 @@ class BadgesService
   ALL_BADGES_RULES = [
   :first_try?
   :all_level_of?
-  :passed?
+  :all_for_category
 ]
 
   def initialize(test_passage)
@@ -23,7 +23,7 @@ class BadgesService
     @user.tests.where(id: @test_passage.test.id).count == 1 && @test_passage.success?
   end
 
-  def passed?(rule_value)
+  def all_for_category(rule_value)
     true if @user.tests.where(test_passages: { success: true }).by_category(rule_value)
                  .pluck(:id).uniq
                  .sort == Test.by_category(rule_value)
