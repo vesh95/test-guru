@@ -29,9 +29,8 @@ class BadgesService
   end
 
   def all_level_of?(rule_value)
-    true if @user.tests.level(1)
-                 .where(test_passages: { success: true })
-                 .pluck(:id).sort == Test.level(1).pluck(:id)
-                 .sort && @test_passage.test.level == 1
+    @user.tests.level(rule_value).where(test_passages: { success: true })
+         .pluck(:id).sort == Test.level(rule_value).pluck(:id)
+         .sort && @test_passage.test.level == 1
   end
 end
