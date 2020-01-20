@@ -52,7 +52,7 @@ class TestPassage < ApplicationRecord
   private
 
   def time_is_over?
-    true if Time.current >= self.left_at && self.passage_time?
+    Time.current >= self.left_at && self.passage_time?
   end
 
 
