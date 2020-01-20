@@ -16,6 +16,10 @@ class User < ApplicationRecord
   :validatable,
   :confirmable
 
+  def success_tests
+    tests.where(test_passages: { success: true })
+  end
+
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test: test)
   end
