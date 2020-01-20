@@ -24,7 +24,7 @@ class BadgesService
   end
 
   def all_for_category?(rule_value)
-    @user.tests.success_tests.by_category(rule_value)
+    @user.success_tests.by_category(rule_value)
          .pluck(:id).sort == Test.by_category(rule_value).pluck(:id)
   end
 
