@@ -1,11 +1,12 @@
 class User < ApplicationRecord
 
-  has_and_belongs_to_many :badges
-
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id
   has_many :gists
+
+  has_many :badges_users, dependent: :destroy
+  has_many :badges, through: :badges_users
 
   devise :database_authenticatable,
   :registerable,
