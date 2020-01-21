@@ -3,5 +3,5 @@ class Badge < ApplicationRecord
   has_many :users, through: :badges_users
 
   validates :name, :img_name, presence: true
-  validates :rule, inclusion: { in: BadgesService::ALL_BADGES_RULES.map { |key,val| key.to_s } }
+  validates :rule, inclusion: { in: BadgesService::ALL_BADGES_RULES.map(&:to_s) }
 end
