@@ -1,6 +1,6 @@
 module Admin::BadgesHelper
   def badges_rules
-    BadgesService::ALL_BADGES_RULES.map { |k,v| [I18n.t(".rules.#{k}"),k]}
+    BadgesService::ALL_BADGES_RULES.map { |k| [I18n.t(".rules.#{k}"), k]}
   end
 
   def rules_translations(badge)
