@@ -31,7 +31,7 @@ class BadgesService
 
   def all_level_of?(rule_value)
     return if @test_passage.test.level == rule_value
-    @test_passage.test.level == 1 && @user.success_tests.level(rule_value)
+    @test_passage.test.level == rule_value && @user.success_tests.level(rule_value)
          .pluck(:id).sort == Test.level(rule_value).pluck(:id).sort
   end
 end
