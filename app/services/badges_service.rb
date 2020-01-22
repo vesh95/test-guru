@@ -25,24 +25,32 @@ class BadgesService
   end
 
   def all_for_category?(rule_value)
-    return if @test_passage.test.category != rule_value
-
+    return if @test_passage.test.category.title != rule_value
     return unless @test_passage.success?
-
-    last_test = Test.by_category(rule_value).last
-    return unless @user.badges_users.older_than_test(last_test).by_rules(__method__, rule_value).empty?
-
-    (Test.by_category(rule_value).pluck(:id) - @user.success_tests.by_category(rule_value).pluck(:id)).empty?
+    (
+      Test.by_category(rule_value).pluck(:id) -
+      new_passages(last_badge_date_by_rules(__method__, rule_value)).ids
+    ).empty?
   end
 
   def all_level_of?(rule_value)
     return if @test_passage.test.level != rule_value.to_i
-
     return unless @test_passage.success?
 
-    last_test = Test.all.level(rule_value).last
-    return unless @user.badges_users.older_than_test(last_test).by_rules(__method__, rule_value).empty?
+    (
+      Test.level(rule_value).pluck(:id) -
+      new_passages(last_badge_date_by_rules(__method__, rule_value)).ids
+    ).empty?
+  end
 
-    (Test.level(rule_value).pluck(:id) - @user.success_tests.level(rule_value).pluck(:id)).empty?
+  private
+
+  def last_badge_date_by_rules(rule, rule_value)
+    @user.badges_users.by_rules(rule, rule_value).last.try(:created_at)
+  end
+
+  def new_passages(last_date)
+    return @user.success_tests if last_date.nil?
+    @user.success_tests.where('test_passages.created_at > ?', last_date)
   end
 end
