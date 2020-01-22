@@ -1,0 +1,5 @@
+ru:
+  rules:
+    first_try?: 'С первой попытки'
+    all_for_category?: 'Все тесты из категории'
+    all_level_of?: 'Все тесты уровня'

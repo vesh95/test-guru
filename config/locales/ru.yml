@@ -68,8 +68,9 @@ ru:
       header: 'Все тесты'
       sort_by_name: Сортировать по имени
     test:
-      level: 'Уровень %{level}'
-      questions: 'Вопросы %{count}'
+      level: 'Уровень: %{level}'
+      questions: 'Вопросы: %{count}'
+      category: 'Категория: %{title}'
 
   test_passages:
     show:
@@ -86,3 +87,13 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест!'
+    recieved_badge:
+      subject: Новое достижение
+
+  users:
+    index:
+      header: 'Профиль пользователя %{email}'
+      first_name_html: '<b>Имя:</b> %{name}'
+      last_name_html: '<b>Фамилия:</b> %{name}'
+      email_html: '<b>email:</b> <a href="mailto:%{name}">%{name}</a>'
+      achievements: Награды

@@ -1,0 +1,10 @@
+<% if current_user.try(:admin?) %>
+<%= content_tag :a, t('navbar.admin-panel'),
+  class: "nav-link dropdown-toggle", id: "admin-actions",
+  data:{ toggle:"dropdown" }, aria_haspopup: true, aria_expanded: false %>
+<% end %>
+<div class="dropdown-menu expand" aria-labelledby="admin-actions">
+  <%= link_to t('.test'), admin_tests_path, class: "dropdown-item" %>
+  <%= link_to t('navbar.gists'), admin_gists_path, class: "dropdown-item" %>
+  <%= link_to t('navbar.badges'), admin_badges_path, class: "dropdown-item" %>
+</div>

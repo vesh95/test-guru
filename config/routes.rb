@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'tests#index'
 
+  get :profile, to: 'users#index'
+
   resource :feedback, only: %i[show create]
 
   devise_for :users, path: :gurus,
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges
     resources :gists, only: %i[index]
     resources :tests do
       patch :update_inline, on: :member

@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :next_question
+  before_update :passage_resilt!
 
   def accept!(answer_ids)
     self. correct_questions += 1 if correct_answer?(answer_ids)
@@ -30,6 +31,8 @@ class TestPassage < ApplicationRecord
 
   def current_question_number
     test.questions.where('id <= ?', current_question.id).count
+  rescue
+
   end
 
   def success?
@@ -71,5 +74,11 @@ class TestPassage < ApplicationRecord
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
     end
+  end
+
+  private
+
+  def passage_resilt!
+    self.success = self.success? if self.completed?
   end
 end

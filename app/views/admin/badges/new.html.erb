@@ -1,0 +1,7 @@
+<div class="col col-12 col-md-8">
+  <h1 class="text-center">
+    <%= t('.header') %>
+    <%= link_to t('links.back'), admin_badges_path, class: "btn btn-secondary m-2" %>
+  </h1>
+  <%= render 'form', badge: @badge %>
+</div>

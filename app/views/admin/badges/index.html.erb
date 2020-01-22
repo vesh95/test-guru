@@ -1,0 +1,9 @@
+<div class="col col-12 col-md-8 justify-content-center">
+  <div class="justify-content-center row">
+    <h1><%= t('.header') %></h1>
+    <%= link_to t('links.add'), new_admin_badge_path, class: "btn btn-primary m-2" %>
+  </div>
+  <div class="row">
+    <%= render @badges %>
+  </div>
+</div>
