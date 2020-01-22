@@ -46,7 +46,7 @@ class BadgesService
   private
 
   def last_badge_date_by_rules(rule, rule_value)
-    @user.badges_users.by_rules(rule, rule_value).last.try(:created_at)
+    @user.badges_users.by_rules(rule, rule_value).order(:created_at).last.try(:created_at)
   end
 
   def new_passages(last_date)
