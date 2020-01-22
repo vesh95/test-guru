@@ -27,6 +27,8 @@ class BadgesService
   def all_for_category?(rule_value)
     return if @test_passage.test.category != rule_value
 
+    return unless @test_passage.success?
+
     last_test = Test.by_category(rule_value).last
     return unless @user.badges_users.older_than_test(last_test).by_rules(__method__, rule_value).empty?
 
@@ -35,6 +37,8 @@ class BadgesService
 
   def all_level_of?(rule_value)
     return if @test_passage.test.level != rule_value.to_i
+
+    return unless @test_passage.success?
 
     last_test = Test.all.level(rule_value).last
     return unless @user.badges_users.older_than_test(last_test).by_rules(__method__, rule_value).empty?
