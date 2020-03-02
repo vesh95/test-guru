@@ -131,7 +131,7 @@ GEM
     orm_adapter (0.5.0)
     pg (1.2.2)
     public_suffix (4.0.1)
-    puma (4.3.1)
+    puma (4.3.2)
       nio4r (~> 2.0)
     rack (2.0.8)
     rack-proxy (0.6.5)
@@ -250,7 +250,7 @@ DEPENDENCIES
   octicons_helper (~> 9.3)
   octokit (~> 4.15)
   pg
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.1)
   rails-i18n (~> 6.0.0)
   sass-rails (>= 6)
